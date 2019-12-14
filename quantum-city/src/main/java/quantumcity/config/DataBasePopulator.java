@@ -13,8 +13,10 @@ import org.springframework.context.annotation.Configuration;
 
 import quantumcity.persistance.entities.Parking;
 import quantumcity.persistance.entities.Traffic;
+import quantumcity.persistance.entities.Weather;
 import quantumcity.persistance.repos.ParkingRepository;
 import quantumcity.persistance.repos.TrafficRepository;
+import quantumcity.persistance.repos.WeatherRepository;
 
 @Configuration
 public class DataBasePopulator {
@@ -168,6 +170,10 @@ public class DataBasePopulator {
 			traffics.add(new Traffic(50,13,"Muresenilor",0));
 			traffics.add(new Traffic(33,14,"Bulevard Garii",2));
 			traffics.add(new Traffic(11,15,"Bulevard Victoriei",0));
+			
+			for(Traffic t: traffics) {
+				this.trafficRepository.save(t);
+			}
 		}
 	}
 	
