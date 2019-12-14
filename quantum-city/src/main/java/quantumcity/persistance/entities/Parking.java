@@ -5,9 +5,9 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
 
 @Entity
 @Table(name = "parking")
@@ -65,8 +65,10 @@ public class Parking implements Serializable{
 		occupiedSlots--;
 	}
 	
-	public Parking(Integer availableSlots) {
+	public Parking(String name, Integer availableSlots) {
+		this.name = name;
 		this.availableSlots = availableSlots;
+		this.occupiedSlots = 0;
 	}
 	
 }
