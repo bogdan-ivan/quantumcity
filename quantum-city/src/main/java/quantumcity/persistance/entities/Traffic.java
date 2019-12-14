@@ -22,12 +22,13 @@ public class Traffic implements Serializable {
 	private int vehicleCount;
 	private float avgVehicle;
 	private String streeName;
+	private int trafficLevel;
 	
-	public Traffic(Long id, int vehicleCount, float avgVehicle, String streeName) {
-		this.id = id;
+	public Traffic(int vehicleCount, float avgVehicle, String streeName, int trafficLevel) {
 		this.vehicleCount = vehicleCount;
 		this.avgVehicle = avgVehicle;
 		this.streeName = streeName;
+		this.trafficLevel = trafficLevel;
 	}
 	public Long getId() {
 		return id;
@@ -53,7 +54,12 @@ public class Traffic implements Serializable {
 	public void setStreeName(String streeName) {
 		this.streeName = streeName;
 	}
-	
+	public int getTrafficLevel() {
+		return trafficLevel;
+	}
+	public void setTrafficLevel(int trafficLevel) {
+		this.trafficLevel = trafficLevel;
+	}
 	@Override
 	public String toString() {
 		return "Traffic [id=" + id + ", vehicleCount=" + vehicleCount + ", avgVehicle=" + avgVehicle + ", streeName="
