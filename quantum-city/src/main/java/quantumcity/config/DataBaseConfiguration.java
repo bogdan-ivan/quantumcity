@@ -18,7 +18,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@EnableJpaRepositories("quantumcity.persistance.repositories")
+@EnableJpaRepositories("quantumcity.persistance.repos")
 public class DataBaseConfiguration {
 
 	private static final String ENTITY_PACKAGE = "quantumcity.persistance.entities";
