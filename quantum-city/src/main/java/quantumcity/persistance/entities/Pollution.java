@@ -24,9 +24,8 @@ public class Pollution implements Serializable{
 	private int sulfureDioxide;
 	private int nitrogenDioxide;
 	
-	public Pollution(Long id, int ozone, int particullateMatter, int carbonMonoxide, int sulfureDioxide,
+	public Pollution(int ozone, int particullateMatter, int carbonMonoxide, int sulfureDioxide,
 			int nitrogenDioxide) {
-		this.id = id;
 		this.ozone = ozone;
 		this.particullateMatter = particullateMatter;
 		this.carbonMonoxide = carbonMonoxide;
