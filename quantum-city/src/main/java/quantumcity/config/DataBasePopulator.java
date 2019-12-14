@@ -12,9 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
 import quantumcity.persistance.entities.Parking;
+import quantumcity.persistance.entities.Pollution;
 import quantumcity.persistance.entities.Traffic;
 import quantumcity.persistance.entities.Weather;
 import quantumcity.persistance.repos.ParkingRepository;
+import quantumcity.persistance.repos.PollutionRepository;
 import quantumcity.persistance.repos.TrafficRepository;
 import quantumcity.persistance.repos.WeatherRepository;
 
@@ -29,6 +31,9 @@ public class DataBasePopulator {
 
 	@Autowired
 	TrafficRepository trafficRepository;
+	
+	@Autowired
+	PollutionRepository pollutionRepository;
 	
 	@PostConstruct
 	public void generateParkings() {
@@ -157,7 +162,6 @@ public class DataBasePopulator {
 		}
 	}
 	
-	
 	@PostConstruct
 	public void generateTraffic() {
 		if(trafficRepository.findAll().size() == 0) {
@@ -176,5 +180,43 @@ public class DataBasePopulator {
 			}
 		}
 	}
+	
+	
+	@SuppressWarnings("resource")
+	@PostConstruct
+	public void generatePollution() throws FileNotFoundException {
+		if(pollutionRepository.findAll().size() == 0) {
+			File file = new File("C:\\Users\\HrihorRa\\Desktop\\Radu\\quantumcity\\quantum-city\\src\\main\\resources\\pollution\\pollutionData.txt");
+			Scanner scan = new Scanner(file);
+			int ozone = 0;
+			int particullate = 0;
+			int carbon = 0;
+			int sulfure = 0;
+			int nitrogen = 0;
+			String g1, g2, g3, g4="";
+			Integer cnt = 0;
+			List<Pollution> pollution = new ArrayList<Pollution>();
+			
+			while(scan.hasNext()) {
+				ozone = scan.nextInt();
+				particullate = scan.nextInt();
+				carbon = scan.nextInt();
+				sulfure = scan.nextInt();
+				nitrogen = scan.nextInt();
+				pollution.add(new Pollution(ozone,particullate,carbon,sulfure,nitrogen));
+				g1 = scan.next();
+				g2 = scan.next();
+				g3 = scan.next();
+				g4 = scan.next();
+			}
+			
+			for(Pollution p: pollution) {
+				this.pollutionRepository.save(p);
+			}
+		}
+	}
+	
+	
+	
 	
 }
