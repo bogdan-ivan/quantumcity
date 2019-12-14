@@ -21,7 +21,7 @@ public class Parking implements Serializable{
 	
 	private String name;
 	
-	private final Integer availableSlots;
+	private Integer availableSlots;
 	
 	private Integer occupiedSlots;
 
@@ -70,5 +70,7 @@ public class Parking implements Serializable{
 		this.availableSlots = availableSlots;
 		this.occupiedSlots = 0;
 	}
+	
+	public Parking() {}
 	
 }
