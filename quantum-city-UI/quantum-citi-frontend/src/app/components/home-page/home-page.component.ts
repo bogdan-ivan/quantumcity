@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-declare const myTest : any;
+declare const getCarCounter : any;
 
 @Component({
   selector: 'app-home-page',
@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit {
   }
 
   onClick() {
-    myTest();
+    console.log(getCarCounter());
   }
 
 }
