@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ParkingService } from 'src/app/service/parking.service';
 import { Parking } from 'src/app/models/parking';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { PollutionService } from 'src/app/service/pollution.service';
+import { Pollution } from 'src/app/models/pollution';
 
 @Component({
   selector: 'app-parking',
@@ -9,18 +12,26 @@ import { Parking } from 'src/app/models/parking';
 })
 export class ParkingComponent implements OnInit {
 
-  parkings : Parking[]
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
+  parkings : Parking[];
+  states : Boolean[];
+
+  displayedColumns: string[] = ['id', 'name', 'free','busy'];
+  dataSource: MatTableDataSource<Parking>;
 
   constructor(
-    public parkingService: ParkingService
-  ) { }
+    public parkingService : ParkingService
+  ) {}
 
   ngOnInit() {
-    this.parkingService.getParking().subscribe((response : Parking[]) => {
+    this.parkingService. getParking().subscribe((response: Parking[])=> {
       this.parkings = response;
-      console.log(this.parkings);
-    });
-  
+      this.dataSource = new MatTableDataSource(this.parkings);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      });
   }
 
 }

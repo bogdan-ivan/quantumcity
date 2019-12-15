@@ -1,4 +1,37 @@
 <div class="wallpaper">
+    <div class="wallpaper">
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+          
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="free">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Capacity </th>
+                <td mat-cell *matCellDef="let row;let i=index">{{row.availableSlots}} </td>
+              </ng-container>
 
+              <ng-container matColumnDef="busy">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Ocupied Slots </th>
+                <td mat-cell *matCellDef="let row;let i=index">{{row.occupiedSlots}} </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+              </tr>
+            </table>
+    
+          </div>
+          
+    </div>
+    
+    
 </div>
 
