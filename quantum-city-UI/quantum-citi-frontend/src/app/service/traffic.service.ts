@@ -6,12 +6,12 @@ const URL : string = "http://localhost:8080/";
 @Injectable({
   providedIn: 'root'
 })
-export class WeatherService {
+export class TrafficService {
 
   constructor(private http: HttpClient) { }
 
-  getWeather(){
-    return this.http.get(URL+"weather/getWeather");
+  getTraffic(){
+    return this.http.get(URL+"traffic");
   }
 
 }

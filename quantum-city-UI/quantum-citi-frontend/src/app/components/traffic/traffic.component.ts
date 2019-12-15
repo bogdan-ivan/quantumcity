@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Traffic } from 'src/app/models/traffic';
+import { TrafficService } from 'src/app/service/traffic.service';
 
 declare const getCarCounter : any;
 
@@ -9,13 +11,17 @@ declare const getCarCounter : any;
 })
 export class TrafficComponent implements OnInit {
 
-  constructor() { }
+  traffic :Traffic[];
+
+  constructor(
+    public trafficService: TrafficService
+  ) { }
 
   ngOnInit() {
-  }
-
-  onClick(){
-    console.log("Nr. masini: ",getCarCounter());
+    this.trafficService.getTraffic().subscribe((response : Traffic[])=> {
+      this.traffic = response;
+    })
+    console.log(this.traffic);
   }
 
 }

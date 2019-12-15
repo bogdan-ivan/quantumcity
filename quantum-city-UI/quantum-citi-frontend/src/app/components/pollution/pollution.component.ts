@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PollutionService } from 'src/app/service/pollution.service';
+import { Pollution } from 'src/app/models/pollution';
 
 @Component({
   selector: 'app-pollution',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PollutionComponent implements OnInit {
 
-  constructor() { }
+pollution : Pollution[];
+
+  constructor(
+    public pollutionService : PollutionService
+  ) { }
 
   ngOnInit() {
+    this.pollutionService. getPollution().subscribe((response: Pollution[])=> {
+      this.pollution = response;
+    })
+    console.log(this.pollution);
   }
 
 }
