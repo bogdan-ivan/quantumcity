@@ -1,0 +1,38 @@
+.wallpaper {
+    width: 100%;
+    height: 100%;
+    background: url(/assets/images/weather-wallpaper.jpg) no-repeat left top;
+    background-size: 100%;
+    
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-card {
+    max-width: 200px;
+  }
+  
+  .example-header-image-sunny {
+    background-image: url('https://i.imgur.com/aYiVRk2.png');
+    background-size: cover;
+    width : 20%;
+  }
+
+  .example-header-image-rain {
+    background-image: url('https://i.imgur.com/88fwNHy.png');
+    background-size: cover;
+    width : 20%;
+  }
+
+  .example-header-image-snow {
+    background-image: url('https://i.imgur.com/fQ3bnza.png');
+    background-size: cover;
+    width : 20%;
+  }

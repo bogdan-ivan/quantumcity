@@ -1,1 +1,51 @@
-<p>pollution works!</p>
+<div class="wallpaper">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image-sunny"></div>
+          <mat-card-title>Ozone: {{ pollutionData[0].ozone }}</mat-card-title>
+          <mat-card-subtitle>O: {{ pollutionData[0].ozone }} </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <ul>
+            <li><strong>Particullate : {{ pollutionData[0]?.particullateMatter }}  </strong></li>
+            <li><strong>Carbon : {{pollutionData[0]?.carbonMonoxide}}  </strong></li>
+            <li><strong>Sulfure : {{pollutionData[0]?.sulfureDioxide}}  </strong></li>
+            <li><strong>Nitrogen : {{pollutionData[0]?.nitrogenDioxide}}  </strong></li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image-rain"></div>
+          <mat-card-title>Ozone: {{ pollutionData[1].ozone }}</mat-card-title>
+          <mat-card-subtitle>O: {{ pollutionData[1].ozone }} </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <ul>
+            <li><strong>Particullate : {{ pollutionData[1]?.particullateMatter }}  </strong></li>
+            <li><strong>Carbon : {{pollutionData[1]?.carbonMonoxide}}  </strong></li>
+            <li><strong>Sulfure : {{pollutionData[1]?.sulfureDioxide}}  </strong></li>
+            <li><strong>Nitrogen : {{pollutionData[1]?.nitrogenDioxide}}  </strong></li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image-snow"></div>
+          <mat-card-title>Ozone: {{ pollutionData[2].ozone }}</mat-card-title>
+          <mat-card-subtitle>O: {{ pollutionData[2].ozone }} </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <ul>
+            <li><strong>Particullate : {{ pollutionData[2]?.particullateMatter }}  </strong></li>
+            <li><strong>Carbon : {{pollutionData[2]?.carbonMonoxide}}  </strong></li>
+            <li><strong>Sulfure : {{pollutionData[2]?.sulfureDioxide}}  </strong></li>
+            <li><strong>Nitrogen : {{pollutionData[2]?.nitrogenDioxide}}  </strong></li>
+          </ul>
+      
+        </mat-card-content>
+      </mat-card>
+</div>
+

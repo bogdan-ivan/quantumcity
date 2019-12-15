@@ -4,7 +4,37 @@ var board = new five.Board({
     port: "COM13"
 });
 
+// Keyboard Input
+var keypress = require("keypress");
+keypress(process.stdin);
+
+// Parking
+const parkingMinCm = 5;
+var parkingStatus = 2;// 0=denied,1=accepted,2=neutru
+
+
+
+
 board.on("ready", function () {
+
+    // Keyboard
+    process.stdin.resume();
+    process.stdin.setEncoding("utf8");
+    process.stdin.setRawMode(true);
+    process.stdin.on("keypress", function (ch, key) {
+        if (!key) {
+            return;
+        }
+
+        if (key.name == "up") {
+            parkingStatus = 1;
+        }
+        else if (key.name == "down") {
+            parkingStatus = 0;
+        }
+    });
+
+
 
     // LCD
     const rs = 1, en = 2, d4 = 4, d5 = 5, d6 = 6, d7 = 7;
@@ -16,9 +46,10 @@ board.on("ready", function () {
 
 
 
-    // RedLED
-    var led = new five.Led(30);
-
+    // LEDs
+    var redLed = new five.Led(33);
+    var yellowLed = new five.Led(32);
+    var greenLed = new five.Led(30);
 
 
     // Movement
@@ -35,14 +66,12 @@ board.on("ready", function () {
         console.log("motion-start");
         //lcd.clear();
         lcd.print("STRT");
-        led.on();
     });
     motion.on("motionend", function () {
         console.log("\n### MOTION ###");
         console.log("motion-end");
         //lcd.clear();
         lcd.print("END");
-        led.off();
     });
 
 
@@ -55,6 +84,22 @@ board.on("ready", function () {
     proximity.on("change", function () {
         console.log("\n### PROX ###");
         console.log("cm: ", this.cm);
+
+        if (this.cm <= parkingMinCm) {
+            yellowLed.on();
+            if (parkingStatus === 1) {
+                greenLed.on();
+            }
+            else if (parkingStatus === 0) {
+                redLed.on();
+            }
+        }
+        else {
+            yellowLed.off();
+            redLed.off();
+            greenLed.off();
+            parkingStatus = 2;
+        }
     });
 
 
@@ -96,8 +141,11 @@ board.on("ready", function () {
 
 
 
+    // Exit
     board.on("exit", () => {
-        led.off();
+        redLed.off();
+        greenLed.off();
+        yellowLed.off();
         lcd.clear();
     });
 });
