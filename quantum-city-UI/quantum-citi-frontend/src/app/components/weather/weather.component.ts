@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from 'src/app/service/weather.service';
 import { Weather } from 'src/app/models/weather';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-weather',
@@ -14,7 +13,9 @@ export class WeatherComponent implements OnInit {
 
   constructor(
     public weatherService: WeatherService
-  ) { }
+  ) {
+      
+  }
 
   ngOnInit() {
     this.weatherService.getWeather().subscribe((response : Weather[])=> {

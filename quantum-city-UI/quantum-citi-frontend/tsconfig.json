@@ -5,6 +5,7 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "allowJs": true,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "module": "esnext",
@@ -22,5 +23,5 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  }
+  },
 }
