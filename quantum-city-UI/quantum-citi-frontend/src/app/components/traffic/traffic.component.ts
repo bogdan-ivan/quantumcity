@@ -20,8 +20,9 @@ export class TrafficComponent implements OnInit {
   ngOnInit() {
     this.trafficService.getTraffic().subscribe((response : Traffic[])=> {
       this.traffic = response;
+      console.log(this.traffic);
     })
-    console.log(this.traffic);
+  
   }
 
 }

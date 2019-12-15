@@ -18,8 +18,9 @@ export class ParkingComponent implements OnInit {
   ngOnInit() {
     this.parkingService.getParking().subscribe((response : Parking[]) => {
       this.parkings = response;
+      console.log(this.parkings);
     });
-    console.log(this.parkings);
+  
   }
 
 }

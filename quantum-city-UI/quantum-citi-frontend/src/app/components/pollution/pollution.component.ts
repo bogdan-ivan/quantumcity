@@ -9,7 +9,7 @@ import { Pollution } from 'src/app/models/pollution';
 })
 export class PollutionComponent implements OnInit {
 
-pollution : Pollution[];
+pollutionData : Pollution[];
 
   constructor(
     public pollutionService : PollutionService
@@ -17,9 +17,8 @@ pollution : Pollution[];
 
   ngOnInit() {
     this.pollutionService. getPollution().subscribe((response: Pollution[])=> {
-      this.pollution = response;
-    })
-    console.log(this.pollution);
+      this.pollutionData = response;
+      });
   }
 
 }
