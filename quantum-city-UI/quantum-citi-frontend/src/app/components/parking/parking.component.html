@@ -1,1 +1,22 @@
-<p>parking works!</p>
+<div class="wallpaper">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image-sunny"></div>
+          <mat-card-title>Date: {{ weatherData[0].date }}</mat-card-title>
+          <mat-card-subtitle>Hour: {{ weatherData[0].date }} </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <ul>
+            <li><strong>Dew point (celsius) : {{ weatherData[0]?.dewptm }}  </strong></li>
+            <li><strong>Humidity : {{weatherData[0]?.hum}}  </strong></li>
+            <li><strong>Pressure : {{weatherData[0]?.pressurem}}  </strong></li>
+            <li><strong>Temeprature: {{weatherData[0]?.tempm}}  </strong></li>
+            <li><strong>Visibility: {{weatherData[0]?.visim}}  </strong></li>
+            <li><strong>Wind direction : {{weatherData[0]?.wdird}}  </strong></li>
+            <li><strong>Wind direction : {{weatherData[0]?.wsdpm}}</strong></li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+</div>
+
