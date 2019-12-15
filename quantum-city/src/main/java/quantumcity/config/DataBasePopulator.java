@@ -183,7 +183,7 @@ public class DataBasePopulator {
 	}
 	
 	
-	@SuppressWarnings("resource")
+	@SuppressWarnings({ "resource", "unused" })
 	@PostConstruct
 	public void generatePollution() throws FileNotFoundException {
 		if(pollutionRepository.findAll().size() == 0) {
