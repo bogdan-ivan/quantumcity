@@ -18,7 +18,7 @@ export class ParkingComponent implements OnInit {
   parkings : Parking[];
   states : Boolean[];
 
-  displayedColumns: string[] = ['id', 'name', 'free','busy'];
+  displayedColumns: string[] = ['name', 'free','busy'];
   dataSource: MatTableDataSource<Parking>;
 
   constructor(
