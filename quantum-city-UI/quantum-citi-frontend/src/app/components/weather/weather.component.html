@@ -1,66 +1,60 @@
 <div class="wallpaper">
     <mat-card class="example-card">
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
+          <div mat-card-avatar class="example-header-image-sunny"></div>
           <mat-card-title>Date: {{ weatherData[0].date }}</mat-card-title>
           <mat-card-subtitle>Hour: {{ weatherData[0].date }} </mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://i.imgur.com/R2guCJD.png" alt="Sunny">
         <mat-card-content>
           <ul>
-              <li>Dew point (celsius) : {{ weatherData[0]?.dewptm }}</li>
-              <li>Humidity : {{weatherData[0]?.hum}}</li>
-              <li>Pressure : {{weatherData[0]?.pressurem}}</li>
-              <li>Temeprature: {{weatherData[0]?.tempm}}</li>
-              <li>Visibility: {{weatherData[0]?.visim}}</li>
-              <li>Wind direction : {{weatherData[0]?.wdird}}</li>
-              <li>Wind direction : {{weatherData[0]?.wsdpm}}</li>
+            <li><strong>Dew point (celsius) : {{ weatherData[0]?.dewptm }}  </strong></li>
+            <li><strong>Humidity : {{weatherData[0]?.hum}}  </strong></li>
+            <li><strong>Pressure : {{weatherData[0]?.pressurem}}  </strong></li>
+            <li><strong>Temeprature: {{weatherData[0]?.tempm}}  </strong></li>
+            <li><strong>Visibility: {{weatherData[0]?.visim}}  </strong></li>
+            <li><strong>Wind direction : {{weatherData[0]?.wdird}}  </strong></li>
+            <li><strong>Wind direction : {{weatherData[0]?.wsdpm}}</strong></li>
           </ul>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
       </mat-card>
 
-      <mat-card class="example-card" style="margin-left: 10px;">
+      <mat-card class="example-card">
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          <div mat-card-avatar class="example-header-image-rain"></div>
+          <mat-card-title>Date: {{ weatherData[1].date }}</mat-card-title>
+          <mat-card-subtitle>Hour: {{ weatherData[1].date }} </mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
+          <ul>
+            <li><strong>Dew point (celsius) : {{ weatherData[1]?.dewptm }}  </strong></li>
+            <li><strong>Humidity : {{weatherData[1]?.hum}}  </strong></li>
+            <li><strong>Pressure : {{weatherData[1]?.pressurem}}  </strong></li>
+            <li><strong>Temeprature: {{weatherData[1]?.tempm}}  </strong></li>
+            <li><strong>Visibility: {{weatherData[1]?.visim}}  </strong></li>
+            <li><strong>Wind direction : {{weatherData[1]?.wdird}}  </strong></li>
+            <li><strong>Wind direction : {{weatherData[1]?.wsdpm}}</strong></li>
+          </ul>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
       </mat-card>
 
-      <mat-card class="example-card" style="margin-left: 10px;">
+      <mat-card class="example-card">
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          <div mat-card-avatar class="example-header-image-snow"></div>
+          <mat-card-title>Date: {{ weatherData[1].date }}</mat-card-title>
+          <mat-card-subtitle>Hour: {{ weatherData[1].date }} </mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
+          <ul>
+              <li><strong>Dew point (celsius) : {{ weatherData[2]?.dewptm }}  </strong></li>
+              <li><strong>Humidity : {{weatherData[2]?.hum}}  </strong></li>
+              <li><strong>Pressure : {{weatherData[2]?.pressurem}}  </strong></li>
+              <li><strong>Temeprature: {{weatherData[2]?.tempm}}  </strong></li>
+              <li><strong>Visibility: {{weatherData[2]?.visim}}  </strong></li>
+              <li><strong>Wind direction : {{weatherData[2]?.wdird}}  </strong></li>
+              <li><strong>Wind direction : {{weatherData[2]?.wsdpm}}</strong></li>
+          </ul>
+      
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
       </mat-card>
 </div>
 
