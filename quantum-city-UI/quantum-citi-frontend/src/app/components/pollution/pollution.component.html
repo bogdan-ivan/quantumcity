@@ -18,18 +18,15 @@
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image-rain"></div>
-          <mat-card-title>Date: {{ pollutionData[1].date }}</mat-card-title>
-          <mat-card-subtitle>Hour: {{ pollutionData[1].date }} </mat-card-subtitle>
+          <mat-card-title>Ozone: {{ pollutionData[1].ozone }}</mat-card-title>
+          <mat-card-subtitle>O: {{ pollutionData[1].ozone }} </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <ul>
-            <li><strong>Dew point (celsius) : {{ pollutionData[1]?.dewptm }}  </strong></li>
-            <li><strong>Humidity : {{pollutionData[1]?.hum}}  </strong></li>
-            <li><strong>Pressure : {{pollutionData[1]?.pressurem}}  </strong></li>
-            <li><strong>Temeprature: {{pollutionData[1]?.tempm}}  </strong></li>
-            <li><strong>Visibility: {{pollutionData[1]?.visim}}  </strong></li>
-            <li><strong>Wind direction : {{pollutionData[1]?.wdird}}  </strong></li>
-            <li><strong>Wind direction : {{pollutionData[1]?.wsdpm}}</strong></li>
+            <li><strong>Particullate : {{ pollutionData[1]?.particullateMatter }}  </strong></li>
+            <li><strong>Carbon : {{pollutionData[1]?.carbonMonoxide}}  </strong></li>
+            <li><strong>Sulfure : {{pollutionData[1]?.sulfureDioxide}}  </strong></li>
+            <li><strong>Nitrogen : {{pollutionData[1]?.nitrogenDioxide}}  </strong></li>
           </ul>
         </mat-card-content>
       </mat-card>
@@ -37,18 +34,15 @@
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image-snow"></div>
-          <mat-card-title>Date: {{ pollutionData[1].date }}</mat-card-title>
-          <mat-card-subtitle>Hour: {{ pollutionData[1].date }} </mat-card-subtitle>
+          <mat-card-title>Ozone: {{ pollutionData[2].ozone }}</mat-card-title>
+          <mat-card-subtitle>O: {{ pollutionData[2].ozone }} </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <ul>
-              <li><strong>Dew point (celsius) : {{ pollutionData[2]?.dewptm }}  </strong></li>
-              <li><strong>Humidity : {{pollutionData[2]?.hum}}  </strong></li>
-              <li><strong>Pressure : {{pollutionData[2]?.pressurem}}  </strong></li>
-              <li><strong>Temeprature: {{pollutionData[2]?.tempm}}  </strong></li>
-              <li><strong>Visibility: {{pollutionData[2]?.visim}}  </strong></li>
-              <li><strong>Wind direction : {{pollutionData[2]?.wdird}}  </strong></li>
-              <li><strong>Wind direction : {{pollutionData[2]?.wsdpm}}</strong></li>
+            <li><strong>Particullate : {{ pollutionData[2]?.particullateMatter }}  </strong></li>
+            <li><strong>Carbon : {{pollutionData[2]?.carbonMonoxide}}  </strong></li>
+            <li><strong>Sulfure : {{pollutionData[2]?.sulfureDioxide}}  </strong></li>
+            <li><strong>Nitrogen : {{pollutionData[2]?.nitrogenDioxide}}  </strong></li>
           </ul>
       
         </mat-card-content>
