@@ -122,6 +122,8 @@ public class Weather implements Serializable{
 		this.dewptm = dewptm;
 	}
 	
-	public Weather() {}
+	public Weather() {
+		
+	}
 	
 }

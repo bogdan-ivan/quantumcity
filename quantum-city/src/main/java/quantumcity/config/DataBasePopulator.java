@@ -92,8 +92,9 @@ public class DataBasePopulator {
 				if(scan.hasNext()) {
 					value = scan.next();
 					weather.get(cnt).setPressurem(value);
-					}
+					} else {
 					weather.get(cnt).setWspdm("-");
+					}
 				cnt++;
 			}
 			
@@ -194,7 +195,7 @@ public class DataBasePopulator {
 			int sulfure = 0;
 			int nitrogen = 0;
 			String g1, g2, g3, g4="";
-			Integer cnt = 0;
+	
 			List<Pollution> pollution = new ArrayList<Pollution>();
 			
 			while(scan.hasNext()) {

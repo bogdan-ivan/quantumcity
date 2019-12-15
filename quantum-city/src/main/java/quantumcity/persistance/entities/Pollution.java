@@ -32,6 +32,14 @@ public class Pollution implements Serializable{
 		this.sulfureDioxide = sulfureDioxide;
 		this.nitrogenDioxide = nitrogenDioxide;
 	}
+	
+	public Pollution() {
+		this.ozone = 0;
+		this.particullateMatter = 0;
+		this.carbonMonoxide = 0;
+		this.sulfureDioxide = 0;
+		this.nitrogenDioxide = 0;
+	}
 
 	public Long getId() {
 		return id;
